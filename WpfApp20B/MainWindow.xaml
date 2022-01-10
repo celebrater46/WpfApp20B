@@ -1,12 +1,26 @@
-﻿<Window x:Class="WpfApp20B.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp20B"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="WpfApp20B.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <xctk:CheckListBox>
+            <xctk:SelectorItem Content="Orange" IsSelected="False"/>
+            <xctk:SelectorItem Content="Apple" IsSelected="False"/>
+            <xctk:SelectorItem Content="Strawberry" IsSelected="True"/>
+        </xctk:CheckListBox>
+        <xctk:WrapPanel Grid.Column="1">
+            <xctk:CalculatorUpDown Width="100" Watermark="Number"/>
+            <xctk:TimePicker Width="100" Watermark="Time" Format="Custom" FormatString="HH:mm"/>
+            <xctk:WatermarkTextBox Text="" Width="120" Height="23" Watermark="String"/>
+        </xctk:WrapPanel>
     </Grid>
 </Window>
